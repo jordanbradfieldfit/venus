@@ -1,0 +1,17 @@
+{
+    "VENUS_DB_1":{
+        "protocol":"http://",
+        "host":"localhost",
+        "port":10001
+    },
+    "VENUS_DB_2":{
+        "protocol":"http://",
+        "host":"localhost",
+        "port":10002
+    },
+    "VENUS_DB_3":{
+        "protocol":"http://",
+        "host":"localhost",
+        "port":10003
+    }
+}
