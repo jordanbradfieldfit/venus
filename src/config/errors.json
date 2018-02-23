@@ -1,14 +1,17 @@
 {
-    "database":{
-
-    },
-    "orderer":{
-
-    },
-    "server":{
-
-    },
-    "peers":{
-        
+    "MONGODB":{
+        "DATA_DIR_DOESNT_EXIST":{
+            "code":1000,
+            "message":"MongoDB data directory doesn't exist and couldn't be created."
+        },"MONGOD_SERVER_CONNECT_FAILED":{
+            "code":1001,
+            "message":"MongoDB open server failed."
+        },"MONGOD_NOT_CONNECTED":{
+            "code":1002,
+            "message":"MongoDB not connected when trying to connect to mongo client."
+        },"MONGODB_CLIENT_CONNECT_FAILED":{
+            "code":1003,
+            "message":"MongoDB client failed to connect."
+        }
     }
 }
