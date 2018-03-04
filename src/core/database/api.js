@@ -1,4 +1,4 @@
-const connections = require('./connect').MongoClientConnections;
+const connections = new Map();
 
 const databaseConfig = require('../../config/database.json');
 
@@ -10,9 +10,27 @@ const getDatabaseCollection = (peer, collection) => {
     return getDatabaseObject(peer).collection(collection);
 }
 
+const findAll = (peer, collection) => {
+    return new Promise((resolve, reject) => {
+        getDatabaseCollection(peer, collection).find({}).toArray((err, result) => {
+            if(err){
+
+            }else{
+                resolve(result);
+            }
+        });
+    });
+}
+
 const findMany = (peer, collection, query) => {
     return new Promise((resolve, reject) => {
+        getDatabaseCollection(peer, collection).find(query).toArray((err, result) => {
+            if(err){
 
+            }else{
+                resolve(result);
+            }
+        });
     });
 }
 
@@ -40,3 +58,23 @@ const insertMany = (peer,collection,  documents) => {
     });
 }
 
+const findInMultipleCollections = (peer, collections) => {
+    return new Promise((resolve, reject) => {
+        Promise.all(collections.map(collection => {
+            return findAll(peer, collection);
+        })).then(results => {
+            resolve(results);
+        }).catch(err => {
+            reject(err);
+        });
+    });
+}
+
+module.exports = {
+    connections,
+    findMany,
+    findOne,
+    updateMany,
+    updateOne,
+    insertMany
+}

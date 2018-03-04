@@ -1,0 +1,45 @@
+{
+    "collections": [{
+        "name":"users",
+        "data": [{
+            "_id": "1",
+            "name": "Jordan",
+            "wallet": "1A"
+        },{
+            "_id": "2",
+            "name": "Jay",
+            "wallet": "2B"
+        },{
+            "_id": "3",
+            "name": "Crypto Bobby",
+            "wallet": "3C"
+        }]
+    },{
+        "name":"wallet",
+        "data": [{
+            "_id": "1A",
+            "user":"1",
+            "assets": {
+                "XRP":10
+            }
+        },{
+            "_id": "2B",
+            "user":"2",
+            "assets": {
+                "XRP":30
+            }
+        },{
+            "_id": "3C",
+            "user":"3",
+            "assets": {
+                "XRP":50
+            }
+        }]
+    },{
+        "name":"assets",
+        "data": [{
+            "_id": "XRP",
+            "supply":100 
+        }]
+    }]
+}

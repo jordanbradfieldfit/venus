@@ -13,5 +13,11 @@
             "code":1003,
             "message":"MongoDB client failed to connect."
         }
+    },
+    "EXTERNAL_COMMAND":{
+        "EXTERNAL_COMMAND_ERROR":{
+            "code":1100,
+            "message":"Error executing external shell command."
+        }
     }
 }

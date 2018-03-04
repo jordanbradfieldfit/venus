@@ -12,7 +12,7 @@
             ]
         }
     },
-    "orderer": {
+    "broadcaster": {
         "protocol": "http://",
         "host": "localhost",
         "port": 4000,

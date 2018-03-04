@@ -3,6 +3,7 @@ const mongod = require('mongod'),
     filesystem = require('fs');
 
 const logger = require('../../lib/logger.js').getLogger('core/database/connect.js', 'debug');
+const api = require('./api');
 
 const errorConfig = require('../../config/errors.json');
 
@@ -21,7 +22,12 @@ const isMongoDConnected = (dbConfig) => {
 }
 
 const doesDataDirectoryExist = (dbConfig) => {
-    return filesystem.existsSync(dbConfig.path) ? true : filesystem.mkdirSync(dbConfig.path);
+    if(filesystem.existsSync(dbConfig.path)){
+        return true;
+    }else{
+        filesystem.mkdirSync(dbConfig.path);
+        return true;
+    }
 }
 
 const buildConnectionString = (dbConfig) => {
@@ -42,6 +48,7 @@ const startMongoClientConnection = (dbConfig) => {
                 }else{
                     logger.info("Successfully connected to the mongo client "+dbConfig.name);
                     MongoClientConnections.set(dbConfig.name, client);
+                    api.connections.set(dbConfig.name, client);
                     resolve(true);
                 }
             });
