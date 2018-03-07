@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A peer based decentralized blockchain network.",
   "main": "index.js",
+  "env":"dev",
   "scripts": {
     "test": "node ./src/init.js"
   },

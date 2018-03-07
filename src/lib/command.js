@@ -3,7 +3,7 @@
  */
 const cmd = require('node-cmd');
 
-const logger = require('./logger').getLogger('lib/helpers/command.js', 'debug');
+const logger = new(require('./logger'))('lib/command.js');
 
 const errors = require('../config/errors.json');
 

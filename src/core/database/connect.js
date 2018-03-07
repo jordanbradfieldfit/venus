@@ -1,10 +1,23 @@
+/**
+ * External libraries
+ */
 const mongod = require('mongod'),
     mongodb = require('mongodb'),
     filesystem = require('fs');
 
-const logger = require('../../lib/logger.js').getLogger('core/database/connect.js', 'debug');
+/**
+ * Internal libraries
+ */
+const logger = new(require('../../lib/logger'))('core/database/connect.js');
+
+/**
+ * Internal helpers
+ */
 const api = require('./api');
 
+/**
+ * Configs
+ */
 const errorConfig = require('../../config/errors.json');
 
 /**

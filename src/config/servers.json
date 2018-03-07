@@ -3,70 +3,31 @@
         "protocol": "http://",
         "host": "localhost",
         "port": 3000,
-        "allowed":{
-            "domains":[
+        "allowed": {
+            "domains": [
 
             ],
-            "ip":[
+            "ip": [
                 "127.0.0.1"
             ]
         }
     },
     "broadcaster": {
-        "protocol": "http://",
-        "host": "localhost",
-        "port": 4000,
-        "allowed":{
-            "domains":[
+        "api": {
+            "protocol": "http://",
+            "host": "localhost",
+            "port": 4000,
+            "allowed": {
+                "domains": [
 
-            ],
-            "ip":[
-                "127.0.0.1"
-            ]
-        }
-    },
-    "peers": {
-        "VENUS_PEER_1": {
-            "protocol": "http://",
-            "host": "localhost",
-            "port": 5000,
-            "database":"VENUS_DB_1",
-            "allowed":{
-                "domains":[
-    
                 ],
-                "ip":[
+                "ip": [
                     "127.0.0.1"
                 ]
             }
         },
-        "VENUS_PEER_2": {
-            "protocol": "http://",
-            "host": "localhost",
-            "port": 5001,
-            "database":"VENUS_DB_2",
-            "allowed":{
-                "domains":[
-    
-                ],
-                "ip":[
-                    "127.0.0.1"
-                ]
-            }
-        },
-        "VENUS_PEER_3": {
-            "protocol": "http://",
-            "host": "localhost",
-            "port": 5002,
-            "database":"VENUS_DB_3",
-            "allowed":{
-                "domains":[
-    
-                ],
-                "ip":[
-                    "127.0.0.1"
-                ]
-            }
+        "socket":{
+            "port":5000
         }
     }
 }

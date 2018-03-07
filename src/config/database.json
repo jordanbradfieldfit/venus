@@ -1,23 +1,53 @@
 {
-    "VENUS_DB_1":{
-        "name":"VENUSDB1",
-        "protocol":"mongodb://",
-        "host":"localhost",
-        "port":10001,
-        "path":"/data/VENUSDB1"
+    "broadcaster": {
+        "instances":{
+            "VENUS_ORDERER_1": {
+                "name": "VENUSORDRDB1",
+                "protocol": "mongodb://",
+                "host": "localhost",
+                "port": 10001,
+                "path": "/data/VENUSORDRDB1"
+            },
+            "VENUSORDRDB2": {
+                "name": "VENUSORDRDB2",
+                "protocol": "mongodb://",
+                "host": "localhost",
+                "port": 10002,
+                "path": "/data/VENUSORDRDB2"
+            },
+            "VENUSORDRDB3": {
+                "name": "VENUSORDRDB3",
+                "protocol": "mongodb://",
+                "host": "localhost",
+                "port": 10003,
+                "path": "/data/VENUSORDRDB3"
+            }
+        },
+        "collections":{
+            "shared":[
+                "wallets",
+                "assets",
+                "transactions",
+                "blocks"
+            ],
+            "private":[
+                "api_keys",
+                "private_keys"
+            ]
+        }
     },
-    "VENUS_DB_2":{
-        "name":"VENUSDB2",
-        "protocol":"mongodb://",
-        "host":"localhost",
-        "port":10002,
-        "path":"/data/VENUSDB2"
-    },
-    "VENUS_DB_3":{
-        "name":"VENUSDB3",
-        "protocol":"mongodb://",
-        "host":"localhost",
-        "port":10003,
-        "path":"/data/VENUSDB3"
+    "peers":{
+        "instances":"*",
+        "collections":{
+            "shared":[
+                "wallets",
+                "assets",
+                "transactions",
+                "blocks"
+            ],
+            "private":[
+                
+            ]
+        }
     }
 }

@@ -1,9 +1,10 @@
 const command = require('./lib/command');
 
-const databaseConnect = require('./core/database/connect');
+const broadcasterApi = require('./core/broadcaster/api/server');
+const broadcasterSocket = require('./core/broadcaster/socket/socket');
 
-const databaseConfig = require('./config/database.json');
-const mockConfig = require('./config/mock.json');
+broadcasterApi.start();
+broadcasterSocket.start();
 
 // command.execute('rm -rf /data/*').then(success => {
 //     return Promise.all(Object.keys(databaseConfig).map(db => {

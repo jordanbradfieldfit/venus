@@ -1,19 +1,31 @@
-const logger = require('log4js');
+const log4js = require('log4js');
 
-/**
- * @function getLogger
- * @description Returns an instance of the log4js class logging with the provided level and specifying the filename.
- * @param {String} filename Name of the file requesting the logger service
- * @param {String} level Requested log level ex. DEBUG
- * @return {Logger} An instance of the logger class
- */
-const getLogger = (filename, level) => {
-    let newLogger = logger.getLogger(filename);
-    newLogger.level = level ? level : 'DEBUG';
-    return newLogger;
-}
+const LEVEL = 'DEBUG';
 
+module.exports = class logger {
+    constructor(filename){
+        this.filename = filename;
+        this.logger = log4js.getLogger(this.filename);
+        this.logger.level = LEVEL.toLowerCase();
+    }
 
-module.exports = {
-    getLogger:getLogger
+    debug(message){
+        return this.logger.debug(message);
+    }
+
+    info(message){
+        return this.logger.info(message);
+    }
+
+    warn(message){
+        return this.logger.warn(message);
+    }
+
+    error(message){
+        return this.logger.error(message);
+    }
+
+    fatal(message){
+        return this.logger.fatal(message);
+    }
 }
