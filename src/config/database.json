@@ -32,7 +32,8 @@
             ],
             "private":[
                 "api_keys",
-                "private_keys"
+                "private_keys",
+                "decrypt_keys"
             ]
         }
     },
