@@ -1,3 +1,2 @@
-const server = require('./server');
-
-server.start();
+//start the server
+require('./api/server').start();

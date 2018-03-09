@@ -8,7 +8,7 @@ const mongod = require('mongod'),
 /**
  * Internal libraries
  */
-const logger = new(require('../../lib/logger'))('core/database/connect.js');
+const logger = new(require('../lib/logger'))('database/connect.js');
 
 /**
  * Internal helpers
@@ -18,7 +18,7 @@ const api = require('./api');
 /**
  * Configs
  */
-const errorConfig = require('../../config/errors.json');
+const errorConfig = require('../config/errors.json');
 
 /**
  * MongoD and MongoClient connections

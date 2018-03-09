@@ -21,7 +21,7 @@ const broadcasterConfig = require('../../../config/servers.json').broadcaster.so
 
 var SOCKET_SERVER;
 
-const start = () => {
+const start = (ready) => {
     logger.debug("*** Staring the broadcaster socket server on port "+broadcasterConfig.port+" ***");
     //create the socket server to listen for peer connections
     SOCKET_SERVER = net.createServer(socket => {
@@ -29,9 +29,12 @@ const start = () => {
     
         //add the new peer to the peers in the socketController
         socketController.addNewPeer({ipAddress, port, ipVersion, socket, uuid:uuid.generate()});
+
+        SOCKET_SERVER.on('end', socketController.peerLeftNetwork);
     
     }).listen(broadcasterConfig.port, () => {
         logger.info("*** Started broadcaster socket successfully ***\n");
+        ready();
     });
 }
 

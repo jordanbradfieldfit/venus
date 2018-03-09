@@ -1,6 +1,6 @@
 const connections = new Map();
 
-const databaseConfig = require('../../config/database.json');
+const databaseConfig = require('../config/database.json');
 
 const getDatabaseObject = (peer) => {
     return connections.get(databaseConfig[peer].name).db(databaseConfig[peer].name);

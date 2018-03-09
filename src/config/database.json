@@ -2,25 +2,25 @@
     "broadcaster": {
         "instances":{
             "VENUS_ORDERER_1": {
-                "name": "VENUSORDRDB1",
+                "name": "VENUSBROADCASTERDB1",
                 "protocol": "mongodb://",
                 "host": "localhost",
                 "port": 10001,
-                "path": "/data/VENUSORDRDB1"
+                "path": "/data/VENUSBROADCASTERDB1"
             },
             "VENUSORDRDB2": {
-                "name": "VENUSORDRDB2",
+                "name": "VENUSBROADCASTERDB2",
                 "protocol": "mongodb://",
                 "host": "localhost",
                 "port": 10002,
-                "path": "/data/VENUSORDRDB2"
+                "path": "/data/VENUSBROADCASTERDB2"
             },
             "VENUSORDRDB3": {
-                "name": "VENUSORDRDB3",
+                "name": "VENUSBROADCASTERDB3",
                 "protocol": "mongodb://",
                 "host": "localhost",
                 "port": 10003,
-                "path": "/data/VENUSORDRDB3"
+                "path": "/data/VENUSBROADCASTERDB3"
             }
         },
         "collections":{

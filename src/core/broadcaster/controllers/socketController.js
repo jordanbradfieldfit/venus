@@ -7,7 +7,7 @@ const logger = new(require('../../../lib/logger'))('core/broadcaster/controllers
 /**
  * Internal helpers
  */
-const database = require('../../database/connect');
+
 
 /**
  * Configs
@@ -25,7 +25,12 @@ const addNewPeer = (peer) => {
     return PEERS.push(peer);//add the peer to the peer array
 }
 
+const peerLeftNetwork = (peer) => {
+    console.log(peer+"left")
+}
+
 module.exports = {
     filterRemoteAddress,
-    addNewPeer
+    addNewPeer,
+    peerLeftNetwork
 }

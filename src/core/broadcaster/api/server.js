@@ -9,7 +9,6 @@ const bodyParser = require('body-parser');
 /**
  * Internal helpers
  */
-const socket = require('../socket/socket');
 const routes = require('./routes.js');
 const logger = new(require('../../../lib/logger'))('core/boradcaster/api/server.js');
 
@@ -41,5 +40,5 @@ const start = () => {
 
 
 module.exports = {
-    start:start
+    start
 }

@@ -9,17 +9,17 @@ const bodyParser = require('body-parser');
 /**
  * Internal Libraries
  */
-const logger = new(require('../../lib/logger'))('core/server/server.js');
+const logger = new(require('../../../lib/logger'))('core/server/server.js');
 
 /**
  * Internal Helpers
  */
-const routes = require('./api/routes.js');
+const routes = require('./routes.js');
 
 /**
  * Configs
  */
-const serverConfig = require('../../config/servers.json').server;
+const serverConfig = require('../../../config/servers.json').server;
 
 var server;
 

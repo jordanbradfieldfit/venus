@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "A peer based decentralized blockchain network.",
   "main": "index.js",
-  "env":"dev",
+  "env": "dev",
   "scripts": {
-    "test": "node ./src/init.js"
+    "test": "node ./src/core/server/api/server.js"
   },
   "keywords": [
     "blockchain",
@@ -20,6 +20,8 @@
     "crypto-js": "^3.1.9-1",
     "express": "^4.16.2",
     "grunt": "^1.0.2",
+    "grunt-cli": "^1.2.0",
+    "grunt-execute": "^0.2.2",
     "log4js": "^2.5.3",
     "mongod": "^2.0.0",
     "mongodb": "^3.0.2",
